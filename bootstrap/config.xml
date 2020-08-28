@@ -1001,7 +1001,7 @@
       <digest>SHA1</digest>
       <engine>none</engine>
       <tunnel_network>172.31.112.0/24</tunnel_network>
-      <local_network>7.7.7.7/8.8.8.8</local_network>
+      <local_network>7.7.7.7/9.9.9.9</local_network>
       <compression>no</compression>
       <pool_enable>yes</pool_enable>
       <netbios_ntype>0</netbios_ntype>
