@@ -4,7 +4,7 @@
 # Output usage messsage.
 #
 
-if [ "$#" -ne 6 ]; then
+if [ "$#" -ne 8 ]; then
     echo " "
     echo " Illegal number of parameters"
     echo " "
@@ -20,14 +20,14 @@ if [ "$#" -ne 6 ]; then
     echo " LAN SUBNET CIDR: /22"
     echo " LAN GW IP: 192.168.4.1"
     echo " WAN GW IP: 192.168.0.1"
-    echo " NETWORK RANGE: 192.168.0.0
+    echo " NETWORK RANGE: 192.168.0.0"
     echo " NETWORK CIDR: /24"
     echo " "
     echo " Then the script would be run as: "
     echo " "
     echo " /bin/sh updateips.sh 192.168.0.7 22 192.168.4.7 22 192.168.4.1 192.168.0.1 192.168.0.0 24"
     echo " "
-    exit 1 
+    exit 1
 else
 
 sed -i '' -E -e 's/1.1.1.1/'$1'/g' config.xml
