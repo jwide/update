@@ -207,5 +207,5 @@ if [ -z "${DO_BARE}" ]; then
 	unset SSL_CA_CERT_FILE
 
 	opnsense-update -bkf
-	reboot
+#	reboot
 fi
