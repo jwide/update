@@ -37,6 +37,6 @@ sed -i '' -E -e 's/4.4.4.4/'$4'/g' config.xml
 sed -i '' -E -e 's/5.5.5.5/'$5'/g' config.xml
 sed -i '' -E -e 's/6.6.6.6/'$6'/g' config.xml
 sed -i '' -E -e 's/7.7.7.7/'$7'/g' config.xml
-sed -i '' -E -e 's/8.8.8.8/'$8'/g' config.xml
+sed -i '' -E -e 's/9.9.9.9/'$8'/g' config.xml
 
 fi
