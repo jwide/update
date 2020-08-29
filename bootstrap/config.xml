@@ -445,13 +445,13 @@
       <descr>tmpVPN</descr>
       <direction>in</direction>
       <quick>1</quick>
-      <protocol>udp</protocol>
+      <protocol>tcp</protocol>
       <source>
         <any>1</any>
       </source>
       <destination>
-        <network>wanip</network>
-        <port>1194</port>
+        <address>WANIP3</address>
+        <port>443</port>
       </destination>
       <updated>
         <username>root@172.16.180.130</username>
