@@ -9,7 +9,7 @@ if [ "$#" -ne 10 ]; then
     echo " Illegal number of parameters"
     echo " "
     echo " "
-    echo " Usage: updateips.sh wanip wansubnet-cidr lanip lansubnet-cidr langw-ip wangw-ip network-addr-range network-cidr"
+    echo " Usage: updateips2.sh mgmt-network-addr-range mgmt-network-cidr wanip2 alias-vip wanip3 alias-vip ovpn-tunnel-network ovpn-tunnel-network-cidr ovpn-local-network ovpn-local-network-cidr"
     echo " "
     echo " For Example: "
     echo " "
