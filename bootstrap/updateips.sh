@@ -9,7 +9,7 @@ if [ "$#" -ne 8 ]; then
     echo " Illegal number of parameters"
     echo " "
     echo " "
-    echo " Usage: updateips.sh wanip wansubnet-cidr lanip lansubnet-cidr langw-ip wangw-ip backend-network-addr-range backend-network-cidr"
+    echo " Usage: updateips.sh wanip wansubnet-cidr lanip lansubnet-cidr langw-ip wangw-ip backendnetw backendnet-cidr"
     echo " "
     echo " For Example: "
     echo " "
