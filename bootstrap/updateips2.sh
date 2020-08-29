@@ -4,7 +4,7 @@
 # Output usage messsage.
 #
 
-if [ "$#" -ne 10 ]; then
+if [ "$#" -ne 8 ]; then
     echo " "
     echo " Illegal number of parameters"
     echo " "
