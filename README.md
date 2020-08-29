@@ -43,7 +43,7 @@ The usage is simple, starting with a FreeBSD 12.1-RELEASE image:
     # fetch https://raw.githubusercontent.com/wjwidener/update/master/bootstrap/config.xml
     # fetch https://raw.githubusercontent.com/wjwidener/update/master/bootstrap/updateips.sh
     # sh ./opnsense-bootstrap.sh -y
-    # sh ./updateips.sh <wanip> <wansubnet-cidr> <lanip> <lansubnet-cidr> <langw-ip> <wangw-ip>
+    # sh ./updateips.sh <wanip> <wansubnet-cidr> <lanip> <lansubnet-cidr> <langw-ip> <wangw-ip> <backend-network> <backend-network cidr> <mgmt network> <mgmt network cidr> <wanip2 alias-vip> <wanip3 alias-vip> <ovpn tunnel network> <ovpn tunnel network cidr> <ovpn local network> <ovpn local network cidr>
     # cp config.xml /usr/local/etc/config.xml
     # reboot
 
