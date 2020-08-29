@@ -1031,9 +1031,9 @@
       <servers>
         <server uuid="143d25ef-6973-454f-a16c-133ee38cb4f1">
           <vpnid>1</vpnid>
-          <hostname>1.1.1.1</hostname>
+          <hostname>13.13.13.13</hostname>
           <template>PlainOpenVPN</template>
-          <local_port>1194</local_port>
+          <local_port>443</local_port>
           <random_local_port>1</random_local_port>
           <validate_server_cn>1</validate_server_cn>
           <cryptoapi>0</cryptoapi>
@@ -1067,9 +1067,9 @@
   <openvpn>
     <openvpn-server>
       <mode>server_user</mode>
-      <protocol>UDP</protocol>
+      <protocol>TCP4</protocol>
       <dev_mode>tun</dev_mode>
-      <local_port>1194</local_port>
+      <local_port>443</local_port>
       <description>tmpvpn</description>
       <crypto>AES-128-CBC</crypto>
       <digest>SHA1</digest>
@@ -1084,6 +1084,7 @@
       <vpnid>1</vpnid>
       <authmode>Local Database</authmode>
       <interface>wan</interface>
+      <ipaddr>13.13.13.13</ipaddr>
       <custom_options/>
       <tls>IwojIDIwNDggYml0IE9wZW5WUE4gc3RhdGljIGtleQojCi0tLS0tQkVHSU4gT3BlblZQTiBTdGF0aWMga2V5IFYxLS0tLS0KYmRjZDQyMjgzNjBmNWJjM2QwYTA3MTEwMmUzNmE1ZTgKYmE2MTM3ODlhYTQ4ZTAzOTIwM2IxZTMyMmNjMDY5ZGMKMGIxZGVhOTNlMjc5OWY4ZWFjNmZkNzc4NzkxZjg5MjEKNmM0ZTgzNzU0ZjdkNjg5M2FlOGNhMzlkYTE4MTE5NDgKNGJkMjg4ZThhZmYwN2JiZDBmY2JiMTc0MmMwM2NhODUKNjZlZDlmNjJjNWY4YjU5OTcyNzgzMGU0N2Y2OTY5OTkKY2RmOTYwMTRlMTRlMGM0NzRmNTI5MmZhODVjOWE3ODAKNzg3YmE4ZWMzMmJkYzEwZWVmNDE4NzY0NGI0NDUwMzMKZTgzNjkzZWFhZDk1ZmE3ODAzMmM5YmQ4MGY2ZmEyOTQKNzk0YjQyOGYzZWZlNmYxZDIyODQ0OTI5MTE2ZTk0NzEKYzBmNWJkM2ZkYzExM2ExMGM2OTI1ZjUwNjU3MWE3ZGUKYmRmYzdmYTRkOTlhNDMzOGE5ZWM3NGVmNmYzZTE5ODAKM2IwYWVlODhmYzBlOGQ0NTU0NmI0Y2ZkZTZkOTYwMjUKOTYzOTNmODM4ODlhZmRkNTNmOGU0ODRjMWY2ZmMzOWEKNWQ2MjhiNDQ5Y2QyNjM3OTdiNGM0MTI1ZDdkMzA0NjcKNGViMzNkOWM0NTAzYmJjMGIxNTE5NThkZDUyYjBlMDYKLS0tLS1FTkQgT3BlblZQTiBTdGF0aWMga2V5IFYxLS0tLS0K</tls>
       <caref>5f48cd367c791</caref>
