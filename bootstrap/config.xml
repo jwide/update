@@ -377,7 +377,63 @@
   </syslog>
   <nat>
     <outbound>
-      <mode>automatic</mode>
+      <mode>hybrid</mode>
+      <rule>
+        <source>
+          <network>7.7.7.7/9.9.9.9</network>
+        </source>
+        <destination>
+          <any>1</any>
+        </destination>
+        <descr>backend subnet</descr>
+        <interface>wan</interface>
+        <tag/>
+        <tagged/>
+        <poolopts/>
+        <poolopts_sourcehashkey/>
+        <ipprotocol>inet</ipprotocol>
+        <target/>
+        <targetip_subnet>0</targetip_subnet>
+        <sourceport/>
+        <updated>
+          <username>root@172.16.180.130</username>
+          <time>1598609942.4614</time>
+          <description>/firewall_nat_out_edit.php made changes</description>
+        </updated>
+        <created>
+          <username>root@172.16.180.130</username>
+          <time>1598609942.4614</time>
+          <description>/firewall_nat_out_edit.php made changes</description>
+        </created>
+      </rule>
+      <rule>
+        <source>
+          <network>10.10.10.10/11.11.11.11</network>
+        </source>
+        <destination>
+          <any>1</any>
+        </destination>
+        <descr>management subnet</descr>
+        <interface>wan</interface>
+        <tag/>
+        <tagged/>
+        <poolopts/>
+        <poolopts_sourcehashkey/>
+        <ipprotocol>inet</ipprotocol>
+        <target/>
+        <targetip_subnet>0</targetip_subnet>
+        <sourceport/>
+        <updated>
+          <username>root@172.16.180.130</username>
+          <time>1598609969.4605</time>
+          <description>/firewall_nat_out_edit.php made changes</description>
+        </updated>
+        <created>
+          <username>root@172.16.180.130</username>
+          <time>1598609969.4605</time>
+          <description>/firewall_nat_out_edit.php made changes</description>
+        </created>
+      </rule>
     </outbound>
   </nat>
   <filter>
@@ -609,7 +665,28 @@
         <geoip>
           <url/>
         </geoip>
-        <aliases/>
+        <aliases>
+          <alias uuid="cb5cb100-f4bc-4ce7-9cfb-cec43426cd78">
+            <enabled>1</enabled>
+            <name>WANIP2</name>
+            <type>host</type>
+            <proto/>
+            <counters>0</counters>
+            <updatefreq/>
+            <content>12.12.12.12</content>
+            <description>2nd IP on WAN</description>
+          </alias>
+          <alias uuid="d93eee1d-a4fb-4979-a61a-857a4d935703">
+            <enabled>1</enabled>
+            <name>WANIP3</name>
+            <type>host</type>
+            <proto/>
+            <counters>0</counters>
+            <updatefreq/>
+            <content>13.13.13.13</content>
+            <description>3rd IP on WAN</description>
+          </alias>
+        </aliases>
       </Alias>
     </Firewall>
     <IDS version="1.0.5">
@@ -966,9 +1043,6 @@
       </servers>
     </OpenVPNExport>
   </OPNsense>
-  <staticroutes>
-    <route/>
-  </staticroutes>
   <ca>
     <refid>5f48cd367c791</refid>
     <descr>tmpCA</descr>
@@ -1000,8 +1074,8 @@
       <crypto>AES-128-CBC</crypto>
       <digest>SHA1</digest>
       <engine>none</engine>
-      <tunnel_network>172.31.112.0/24</tunnel_network>
-      <local_network>7.7.7.7/9.9.9.9</local_network>
+      <tunnel_network>14.14.14.14/15.15.15.15</tunnel_network>
+      <local_network>16.16.16.16/17.17.17.17</local_network>
       <compression>no</compression>
       <pool_enable>yes</pool_enable>
       <netbios_ntype>0</netbios_ntype>
@@ -1019,4 +1093,36 @@
       <cert_depth>1</cert_depth>
     </openvpn-server>
   </openvpn>
+  <staticroutes version="0.0.0">
+    <route uuid="24253d13-a2e8-40f9-a7bf-ba91acccf4c3">
+      <network>168.63.129.16/32</network>
+      <gateway>LAN_GW</gateway>
+      <descr>MSFT Azure Monitoring route</descr>
+      <disabled>0</disabled>
+    </route>
+    <route uuid="badf9c49-1d94-4ee7-9b42-dc620195fd5a">
+      <network>10.10.10.10/11.11.11.11</network>
+      <gateway>LAN_GW</gateway>
+      <descr>Management Subnet</descr>
+      <disabled>0</disabled>
+    </route>
+  </staticroutes>
+  <virtualip>
+    <vip>
+      <type>single</type>
+      <subnet_bits>32</subnet_bits>
+      <mode>ipalias</mode>
+      <interface>wan</interface>
+      <descr>WANIP2</descr>
+      <subnet>12.12.12.12</subnet>
+    </vip>
+    <vip>
+      <type>single</type>
+      <subnet_bits>32</subnet_bits>
+      <mode>ipalias</mode>
+      <interface>wan</interface>
+      <descr>WANIP3</descr>
+      <subnet>13.13.13.13</subnet>
+    </vip>
+  </virtualip>
 </opnsense>
