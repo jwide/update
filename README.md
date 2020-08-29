@@ -38,7 +38,6 @@ an OPNsense installation.  Both UFS and ZFS installations are supported.
 
 The usage is simple, starting with a FreeBSD 12.1-RELEASE image:
 
-    # pkg install ca_root_nss
     # fetch https://raw.githubusercontent.com/wjwidener/update/master/bootstrap/opnsense-bootstrap.sh
     # fetch https://raw.githubusercontent.com/wjwidener/update/master/bootstrap/config.xml
     # fetch https://raw.githubusercontent.com/wjwidener/update/master/bootstrap/updateips.sh
