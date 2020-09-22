@@ -434,6 +434,34 @@
           <description>/firewall_nat_out_edit.php made changes</description>
         </created>
       </rule>
+      <rule>
+        <source>
+          <network>18.18.18.18/19.19.19.19</network>
+        </source>
+        <destination>
+          <any>1</any>
+        </destination>
+        <descr>gateway subnet</descr>
+        <interface>wan</interface>
+        <tag/>
+        <tagged/>
+        <poolopts/>
+        <poolopts_sourcehashkey/>
+        <ipprotocol>inet</ipprotocol>
+        <target/>
+        <targetip_subnet>0</targetip_subnet>
+        <sourceport/>
+        <updated>
+          <username>root@172.31.168.6</username>
+          <time>1600811722.4851</time>
+          <description>/firewall_nat_out_edit.php made changes</description>
+        </updated>
+        <created>
+          <username>root@172.31.168.6</username>
+          <time>1600811722.4851</time>
+          <description>/firewall_nat_out_edit.php made changes</description>
+        </created>
+      </rule>
     </outbound>
   </nat>
   <OPNsense>
@@ -1115,6 +1143,12 @@
       <network>10.10.10.10/11.11.11.11</network>
       <gateway>LAN_GW</gateway>
       <descr>Management Subnet</descr>
+      <disabled>0</disabled>
+    </route>
+    <route uuid="c1f0ff30-ebf5-472e-907a-4fbcdd830381">
+      <network>18.18.18.18/19.19.19.19</network>
+      <gateway>LAN_GW</gateway>
+      <descr>Gateway Subnet</descr>
       <disabled>0</disabled>
     </route>
   </staticroutes>
