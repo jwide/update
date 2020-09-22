@@ -436,209 +436,6 @@
       </rule>
     </outbound>
   </nat>
-  <filter>
-    <rule>
-      <type>pass</type>
-      <interface>wan</interface>
-      <ipprotocol>inet</ipprotocol>
-      <statetype>keep state</statetype>
-      <descr>tmpVPN</descr>
-      <direction>in</direction>
-      <quick>1</quick>
-      <protocol>tcp</protocol>
-      <source>
-        <any>1</any>
-      </source>
-      <destination>
-        <address>WANIP3</address>
-        <port>443</port>
-      </destination>
-      <updated>
-        <username>root@172.16.180.130</username>
-        <time>1598606867.7148</time>
-        <description>/firewall_rules_edit.php made changes</description>
-      </updated>
-      <created>
-        <username>root@172.16.180.130</username>
-        <time>1598606867.7148</time>
-        <description>/firewall_rules_edit.php made changes</description>
-      </created>
-    </rule>
-    <rule>
-      <type>pass</type>
-      <interface>lan</interface>
-      <ipprotocol>inet</ipprotocol>
-      <statetype>keep state</statetype>
-      <direction>in</direction>
-      <quick>1</quick>
-      <protocol>icmp</protocol>
-      <source>
-        <any>1</any>
-      </source>
-      <destination>
-        <any>1</any>
-      </destination>
-    </rule>
-    <rule>
-      <type>pass</type>
-      <interface>lan</interface>
-      <ipprotocol>inet</ipprotocol>
-      <statetype>keep state</statetype>
-      <direction>in</direction>
-      <quick>1</quick>
-      <protocol>tcp</protocol>
-      <source>
-        <any>1</any>
-      </source>
-      <destination>
-        <any>1</any>
-      </destination>
-    </rule>
-    <rule>
-      <type>pass</type>
-      <interface>lan</interface>
-      <ipprotocol>inet</ipprotocol>
-      <statetype>keep state</statetype>
-      <direction>in</direction>
-      <quick>1</quick>
-      <protocol>udp</protocol>
-      <source>
-        <any>1</any>
-      </source>
-      <destination>
-        <any>1</any>
-      </destination>
-    </rule>
-    <rule>
-      <type>pass</type>
-      <ipprotocol>inet</ipprotocol>
-      <descr><![CDATA[Default allow LAN to any rule]]></descr>
-      <interface>lan</interface>
-      <source>
-        <network>lan</network>
-      </source>
-      <destination>
-        <any/>
-      </destination>
-    </rule>
-    <rule>
-      <type>pass</type>
-      <ipprotocol>inet6</ipprotocol>
-      <descr><![CDATA[Default allow LAN IPv6 to any rule]]></descr>
-      <interface>lan</interface>
-      <source>
-        <network>lan</network>
-      </source>
-      <destination>
-        <any/>
-      </destination>
-    </rule>
-    <rule>
-      <type>pass</type>
-      <interface>openvpn</interface>
-      <ipprotocol>inet</ipprotocol>
-      <statetype>keep state</statetype>
-      <direction>in</direction>
-      <quick>1</quick>
-      <source>
-        <any>1</any>
-      </source>
-      <destination>
-        <any>1</any>
-      </destination>
-      <updated>
-        <username>root@172.16.180.130</username>
-        <time>1598606830.1793</time>
-        <description>/firewall_rules_edit.php made changes</description>
-      </updated>
-      <created>
-        <username>root@172.16.180.130</username>
-        <time>1598606830.1793</time>
-        <description>/firewall_rules_edit.php made changes</description>
-      </created>
-    </rule>
-  </filter>
-  <rrd>
-    <enable/>
-  </rrd>
-  <load_balancer>
-    <monitor_type>
-      <name>ICMP</name>
-      <type>icmp</type>
-      <descr><![CDATA[ICMP]]></descr>
-      <options/>
-    </monitor_type>
-    <monitor_type>
-      <name>TCP</name>
-      <type>tcp</type>
-      <descr><![CDATA[Generic TCP]]></descr>
-      <options/>
-    </monitor_type>
-    <monitor_type>
-      <name>HTTP</name>
-      <type>http</type>
-      <descr><![CDATA[Generic HTTP]]></descr>
-      <options>
-        <path>/</path>
-        <host/>
-        <code>200</code>
-      </options>
-    </monitor_type>
-    <monitor_type>
-      <name>HTTPS</name>
-      <type>https</type>
-      <descr><![CDATA[Generic HTTPS]]></descr>
-      <options>
-        <path>/</path>
-        <host/>
-        <code>200</code>
-      </options>
-    </monitor_type>
-    <monitor_type>
-      <name>SMTP</name>
-      <type>send</type>
-      <descr><![CDATA[Generic SMTP]]></descr>
-      <options>
-        <send/>
-        <expect>220 *</expect>
-      </options>
-    </monitor_type>
-  </load_balancer>
-  <ntpd>
-    <prefer>0.opnsense.pool.ntp.org</prefer>
-  </ntpd>
-  <widgets>
-    <sequence>system_information-container:00000000-col3:show,services_status-container:00000001-col4:show,gateways-container:00000002-col4:show,interface_list-container:00000003-col4:show</sequence>
-    <column_count>2</column_count>
-  </widgets>
-  <gateways>
-    <gateway_item>
-      <interface>lan</interface>
-      <gateway>5.5.5.5</gateway>
-      <name>LAN_GW</name>
-      <weight>1</weight>
-      <ipprotocol>inet</ipprotocol>
-      <interval/>
-      <descr/>
-      <monitor_disable>1</monitor_disable>
-    </gateway_item>
-    <gateway_item>
-      <interface>wan</interface>
-      <gateway>6.6.6.6</gateway>
-      <name>WAN_GW</name>
-      <weight>1</weight>
-      <ipprotocol>inet</ipprotocol>
-      <interval/>
-      <descr/>
-      <monitor>8.8.8.8</monitor>
-      <defaultgw>1</defaultgw>
-    </gateway_item>
-  </gateways>
-  <revision>
-    <username>root@172.16.180.130</username>
-    <time>1598607309.7355</time>
-    <description>/system_usermanager.php made changes</description>
-  </revision>
   <OPNsense>
     <captiveportal version="1.0.0">
       <zones/>
@@ -1043,6 +840,209 @@
       </servers>
     </OpenVPNExport>
   </OPNsense>
+  <filter>
+    <rule>
+      <type>pass</type>
+      <interface>wan</interface>
+      <ipprotocol>inet</ipprotocol>
+      <statetype>keep state</statetype>
+      <descr>tmpVPN</descr>
+      <direction>in</direction>
+      <quick>1</quick>
+      <protocol>tcp</protocol>
+      <source>
+        <any>1</any>
+      </source>
+      <destination>
+        <address>WANIP3</address>
+        <port>443</port>
+      </destination>
+      <updated>
+        <username>root@172.16.180.130</username>
+        <time>1598606867.7148</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </updated>
+      <created>
+        <username>root@172.16.180.130</username>
+        <time>1598606867.7148</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </created>
+    </rule>
+    <rule>
+      <type>pass</type>
+      <interface>lan</interface>
+      <ipprotocol>inet</ipprotocol>
+      <statetype>keep state</statetype>
+      <direction>in</direction>
+      <quick>1</quick>
+      <protocol>icmp</protocol>
+      <source>
+        <any>1</any>
+      </source>
+      <destination>
+        <any>1</any>
+      </destination>
+    </rule>
+    <rule>
+      <type>pass</type>
+      <interface>lan</interface>
+      <ipprotocol>inet</ipprotocol>
+      <statetype>keep state</statetype>
+      <direction>in</direction>
+      <quick>1</quick>
+      <protocol>tcp</protocol>
+      <source>
+        <any>1</any>
+      </source>
+      <destination>
+        <any>1</any>
+      </destination>
+    </rule>
+    <rule>
+      <type>pass</type>
+      <interface>lan</interface>
+      <ipprotocol>inet</ipprotocol>
+      <statetype>keep state</statetype>
+      <direction>in</direction>
+      <quick>1</quick>
+      <protocol>udp</protocol>
+      <source>
+        <any>1</any>
+      </source>
+      <destination>
+        <any>1</any>
+      </destination>
+    </rule>
+    <rule>
+      <type>pass</type>
+      <ipprotocol>inet</ipprotocol>
+      <descr><![CDATA[Default allow LAN to any rule]]></descr>
+      <interface>lan</interface>
+      <source>
+        <network>lan</network>
+      </source>
+      <destination>
+        <any/>
+      </destination>
+    </rule>
+    <rule>
+      <type>pass</type>
+      <ipprotocol>inet6</ipprotocol>
+      <descr><![CDATA[Default allow LAN IPv6 to any rule]]></descr>
+      <interface>lan</interface>
+      <source>
+        <network>lan</network>
+      </source>
+      <destination>
+        <any/>
+      </destination>
+    </rule>
+    <rule>
+      <type>pass</type>
+      <interface>openvpn</interface>
+      <ipprotocol>inet</ipprotocol>
+      <statetype>keep state</statetype>
+      <direction>in</direction>
+      <quick>1</quick>
+      <source>
+        <any>1</any>
+      </source>
+      <destination>
+        <any>1</any>
+      </destination>
+      <updated>
+        <username>root@172.16.180.130</username>
+        <time>1598606830.1793</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </updated>
+      <created>
+        <username>root@172.16.180.130</username>
+        <time>1598606830.1793</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </created>
+    </rule>
+  </filter>
+  <rrd>
+    <enable/>
+  </rrd>
+  <load_balancer>
+    <monitor_type>
+      <name>ICMP</name>
+      <type>icmp</type>
+      <descr><![CDATA[ICMP]]></descr>
+      <options/>
+    </monitor_type>
+    <monitor_type>
+      <name>TCP</name>
+      <type>tcp</type>
+      <descr><![CDATA[Generic TCP]]></descr>
+      <options/>
+    </monitor_type>
+    <monitor_type>
+      <name>HTTP</name>
+      <type>http</type>
+      <descr><![CDATA[Generic HTTP]]></descr>
+      <options>
+        <path>/</path>
+        <host/>
+        <code>200</code>
+      </options>
+    </monitor_type>
+    <monitor_type>
+      <name>HTTPS</name>
+      <type>https</type>
+      <descr><![CDATA[Generic HTTPS]]></descr>
+      <options>
+        <path>/</path>
+        <host/>
+        <code>200</code>
+      </options>
+    </monitor_type>
+    <monitor_type>
+      <name>SMTP</name>
+      <type>send</type>
+      <descr><![CDATA[Generic SMTP]]></descr>
+      <options>
+        <send/>
+        <expect>220 *</expect>
+      </options>
+    </monitor_type>
+  </load_balancer>
+  <ntpd>
+    <prefer>0.opnsense.pool.ntp.org</prefer>
+  </ntpd>
+  <widgets>
+    <sequence>system_information-container:00000000-col3:show,services_status-container:00000001-col4:show,gateways-container:00000002-col4:show,interface_list-container:00000003-col4:show</sequence>
+    <column_count>2</column_count>
+  </widgets>
+  <gateways>
+    <gateway_item>
+      <interface>lan</interface>
+      <gateway>5.5.5.5</gateway>
+      <name>LAN_GW</name>
+      <weight>1</weight>
+      <ipprotocol>inet</ipprotocol>
+      <interval/>
+      <descr/>
+      <monitor_disable>1</monitor_disable>
+    </gateway_item>
+    <gateway_item>
+      <interface>wan</interface>
+      <gateway>6.6.6.6</gateway>
+      <name>WAN_GW</name>
+      <weight>1</weight>
+      <ipprotocol>inet</ipprotocol>
+      <interval/>
+      <descr/>
+      <monitor>8.8.8.8</monitor>
+      <defaultgw>1</defaultgw>
+    </gateway_item>
+  </gateways>
+  <revision>
+    <username>root@172.16.180.130</username>
+    <time>1598607309.7355</time>
+    <description>/system_usermanager.php made changes</description>
+  </revision>
   <ca>
     <refid>5f48cd367c791</refid>
     <descr>tmpCA</descr>
@@ -1058,6 +1058,24 @@
     <prv>LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRRGVaRUVjRTNLSFlKdWQKT0MwZWRwanhtb3lQaWZtOUZHTGlKc21vSnpIWDFLSGVkYy90dWRrOVR6cmQzVGtPM2hmekJNMGQxcFNuVmhCaApBemI0UW5NT0N5UzNPWjYvYWRvOHd3eS82Zyt3UDFVdjBaWXd4WENhaVpubngza0tLd1ZXaHd6bnVQUlRvbG5kCjlhZWhhTEJoY3pnMlA2bE9xWlFpMlphZnR3elg3NUROVEVGVWd1NElWdFFXVE0rVXBHdFJBRDVhYlc4T1YzQWwKdVl1K01pSkZLRnFOU1FHNm5oUzFWYkZOZWpucEpWRTR6QjV4UktiVDNoT2VJYWZmMlRIMFdMc1RucUh3NkhQVgppR0t6R3dhbmtJTG0rbXdRWmYyOExPRy9YV0pSL3Z5eVZjV3k4ODBUa3RQL25jMVlpN0pUUkpremplOVFkMDF4CjVCaERGKzhKQWdNQkFBRUNnZ0VCQU5GaWd3cjBKSGpodEtJcUtoRHNpTU94UjNZOTZpemo3TllRdnZ6YktrcVQKb0hQYmFKSGkwVzZ3RWpTaC9QN0tqTEg2YTBVVXE1R0JycG9vZExENW4yb3hnN2dmUUIvb2dkbURxNVZsd3ErbQpjWVk4UnJSVXNOaFBoZUI4SnJJMEh5cUFyTjNmZmVyZ2lNdzZaa0hLVjRiby9KdlhCSWxUa0czZmY3bVFsejhXClJqSjMzODJWOVdpNVZINWhaRFNRQ2x3MGNxdFhwUlBTZ2E5OXBLaHhnbXhWdlRyVWNjd0QwR01xa2kwWUNTUXQKOGo4RlRuN0lqME53Rklkd1RQRDAzOXdhWGdkbjZOeGFURWJuVEsza1h6ZktUeVE1UmJudXRkTS8zY29OOWRicgp3VzZFd2h2UUE5SFpSdFlCd1dyRGlzeXU3a2llOU9nMXlSSU1HQ29pc0FFQ2dZRUE5aEtDYlVuZzhSKzV0RUZuCnRTWHBxRUlmV2lGck8ycUg5eHExZXJCa1FpZ0svSVc2cWk4a2JGdHd6UFJ4aW1aU3NZZXY5RkllZ1d5cGZ6MVIKeDJDemh0dExRL1VWaFZpaWIxTjhlMXZ3SEx1Y205KzgxSVdvZXRuSU5BTzFuR2VtQmhNamQ1Q2NCMG9EdGMyaAo5Y3RNYmFMTzVmajJreFV2RjdCTmpldDlTRWtDZ1lFQTUxMHFWbVJiUjM1Z0lhQUg2TnFsN0RKdVFXUFFwVys4ClpnUTI3a2NxVlRneW1sV3VGaGRBVWFsR0p0MEdOQituRllnT0Vad21ML2x5U0FJaHpvQ0ltME1IbE9yTXdOYUcKdENYMTZxTldBZDQ5RjZpbE5JM1BBUGUrbG9aVjVGMC9SYlMySzFrUXgzanE2NjZVU2hMOE16Sms3UzZGY3BLSApmOWF0Q05iZzhNRUNnWUJ6Y1RlVFFpZXZ0NnlOcm1tVENKaFlBYjFuc1duM1ZBRTVvbVFsalA5Y01pRUZXMCs1CmE2aHcxVzFVR2hIeVZoTFJpdEMzbEpjUExRVlAxbHE1YU5xUWwrejFrdE5uM2E5Ry95blZUY3FXRUVabXNrNksKZmJJUEFJRDJOZzlMc3l5bWlQQUl0ZVVkWGxIalJ2ZUdzcnZHYTYwWkl2VzdCeU15djltQ2pVb1hVUUtCZ1FDMgpEWkJQOUo0Q3pzVjBFQW5KUjZ1Q0JWak9xVzAza0ltdHVLbEVxOGo2ejhLNXdLdkFoRUUvUUxTTHhpV29oRE9rCmRLK2xXYnFPeTNrS2dtcjVwQmhhRzg5dWRhZnlJWnhUU3YrTHgwVFpLWGZuRXZRVU8zWGtyQTFUUXBkNW40bzMKSG5DdUFXSjdvNEV2UE90QXNsbXpLM2RSVHVjQTlaNGJrT0FOY1pBRXdRS0JnREFjbVRabGxIaTQ0bzQwVTNJdwpjRk5TTEtHL0NJZHltek94SlVGeWFqWld4MHpwamJvM2d5NEtDb3VLNTNDWnUzdnljcklhUnZ1QjZnMHVKeTV3CnN3V1BvNnJ5YTkxWmJUVFZqZno0OU4rZENNdTJod29VTEVUTzE3SnpkWldUdGowTGN0NnFMT1h4R25OQ2tFcmcKdUFMYmFQb08vNUIzajhSM2swS0VUWmtICi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K</prv>
   </cert>
   <crl/>
+  <virtualip>
+    <vip>
+      <type>single</type>
+      <subnet_bits>32</subnet_bits>
+      <mode>ipalias</mode>
+      <interface>wan</interface>
+      <descr>WANIP2</descr>
+      <subnet>12.12.12.12</subnet>
+    </vip>
+    <vip>
+      <type>single</type>
+      <subnet_bits>32</subnet_bits>
+      <mode>ipalias</mode>
+      <interface>wan</interface>
+      <descr>WANIP3</descr>
+      <subnet>13.13.13.13</subnet>
+    </vip>
+  </virtualip>
   <openvpn>
     <openvpn-server>
       <mode>server_tls</mode>
@@ -1100,22 +1118,4 @@
       <disabled>0</disabled>
     </route>
   </staticroutes>
-  <virtualip>
-    <vip>
-      <type>single</type>
-      <subnet_bits>32</subnet_bits>
-      <mode>ipalias</mode>
-      <interface>wan</interface>
-      <descr>WANIP2</descr>
-      <subnet>12.12.12.12</subnet>
-    </vip>
-    <vip>
-      <type>single</type>
-      <subnet_bits>32</subnet_bits>
-      <mode>ipalias</mode>
-      <interface>wan</interface>
-      <descr>WANIP3</descr>
-      <subnet>13.13.13.13</subnet>
-    </vip>
-  </virtualip>
 </opnsense>
