@@ -1152,4 +1152,10 @@
       <disabled>0</disabled>
     </route>
   </staticroutes>
+      <route uuid="faccbd6a-30ca-41b9-8c5f-e637a8ee6d16">
+      <network>20.20.20.20/21.21.21.21</network>
+      <gateway>LAN_GW</gateway>
+      <descr>Azure VPN P2S Network</descr>
+      <disabled>0</disabled>
+    </route>
 </opnsense>
