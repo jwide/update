@@ -46,7 +46,7 @@ The usage is simple, starting with a FreeBSD 12.1-RELEASE image:
     # sh ./opnsense-bootstrap.sh -y
     # sh updateips.sh <wanip> <wansubnet-cidr> <lanip> <lansubnet-cidr> <langw-ip> <wangw-ip> <backendnet> <backendnet-cidr>
     # sh updateips2.sh <mgmtnet> <mgmtnet-cidr> <wanip2-alias-vip> <wanip3-alias-vip> <ovpntunnet> <ovpntunnet-cidr> <ovpnlocnet> <ovpnlocnet-cidr>
-    # sh updateips3.sh <gatewaynet> <gatewaynet-cidr>
+    # sh updateips3.sh <gatewaynet> <gatewaynet-cidr> <azurep2snet> <azurep2snet-cidr>
     # cp config.xml /usr/local/etc/config.xml
     # reboot
 
