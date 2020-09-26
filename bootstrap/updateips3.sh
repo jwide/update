@@ -9,13 +9,15 @@ if [ "$#" -ne 2 ]; then
     echo " Illegal number of parameters"
     echo " "
     echo " "
-    echo " Usage: updateips3.sh gatewaynet gatewaynet-cidr"
+    echo " Usage: updateips3.sh gatewaynet gatewaynet-cidr azurep2snet azurep2snet-cidr"
     echo " "
     echo " For Example: "
     echo " "
     echo " If the IPs, subnet cidr and gw ips are:"
     echo " GATEWAY SUBNET RANGE: 192.168.0.128"
     echo " GATEWAY SUBNET CIDR: /26"
+    echo " AZURE P2S NETWORK RANGE: 172.16.0.0"
+    echo " AZURE P2S NETWORK CIDR: /24"
     echo " "
     echo " Then the script would be run as: "
     echo " "
@@ -26,5 +28,7 @@ else
 
 sed -i '' -E -e 's/18.18.18.18/'$1'/g' config.xml
 sed -i '' -E -e 's/19.19.19.19/'$2'/g' config.xml
+sed -i '' -E -e 's/20.20.20.20/'$3'/g' config.xml
+sed -i '' -E -e 's/21.21.21.21/'$4'/g' config.xml
 
 fi
