@@ -491,6 +491,16 @@
           <url/>
         </geoip>
         <aliases>
+          <alias uuid="65e37baa-dbf8-46b2-9323-4807dba9171c">
+            <enabled>1</enabled>
+            <name>WANIP1</name>
+            <type>host</type>
+            <proto/>
+            <counters>0</counters>
+            <updatefreq/>
+            <content>3.3.3.3</content>
+            <description>1st IP on WAN</description>
+          </alias>
           <alias uuid="cb5cb100-f4bc-4ce7-9cfb-cec43426cd78">
             <enabled>1</enabled>
             <name>WANIP2</name>
