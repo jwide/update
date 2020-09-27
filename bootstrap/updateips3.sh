@@ -4,7 +4,7 @@
 # Output usage messsage.
 #
 
-if [ "$#" -ne 2 ]; then
+if [ "$#" -ne 6 ]; then
     echo " "
     echo " Illegal number of parameters"
     echo " "
@@ -28,9 +28,21 @@ if [ "$#" -ne 2 ]; then
     exit 1
 else
 
+FWPW=`php pw.php $5`
+
+#echo "The password is: $5"
+#echo "The password hash is: $FWPW"
+
+OXIPW=`php pw.php $6`
+
+#echo "The password is: $6"
+#echo "The password hash is: $OXIPW"
+
 sed -i '' -E -e 's/18.18.18.18/'$1'/g' config.xml
 sed -i '' -E -e 's/19.19.19.19/'$2'/g' config.xml
 sed -i '' -E -e 's/20.20.20.20/'$3'/g' config.xml
 sed -i '' -E -e 's/21.21.21.21/'$4'/g' config.xml
+sed -i '' -E -e 's|22.22.22.22|'$FWPW'|g' config.xml
+sed -i '' -E -e 's|23.23.23.23|'$OXIPW'|g' config.xml
 
 fi
