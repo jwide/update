@@ -9,7 +9,7 @@ if [ "$#" -ne 2 ]; then
     echo " Illegal number of parameters"
     echo " "
     echo " "
-    echo " Usage: updateips3.sh gatewaynet gatewaynet-cidr azurep2snet azurep2snet-cidr"
+    echo " Usage: updateips3.sh gatewaynet gatewaynet-cidr azurep2snet azurep2snet-cidr fwpw oxipw"
     echo " "
     echo " For Example: "
     echo " "
@@ -18,10 +18,12 @@ if [ "$#" -ne 2 ]; then
     echo " GATEWAY SUBNET CIDR: /26"
     echo " AZURE P2S NETWORK RANGE: 172.16.0.0"
     echo " AZURE P2S NETWORK CIDR: /24"
+    echo " FWPW: opnsense "
+    echo " OXIDIZED PW: oxidized "
     echo " "
     echo " Then the script would be run as: "
     echo " "
-    echo " /bin/sh updateips3.sh 192.168.0.128 26"
+    echo " /bin/sh updateips3.sh 192.168.0.128 26 opnsense oxidized"
     echo " "
     exit 1
 else
