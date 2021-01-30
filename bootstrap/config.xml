@@ -498,7 +498,7 @@
             <proto/>
             <counters>0</counters>
             <updatefreq/>
-            <content>3.3.3.3</content>
+            <content>1.1.1.1</content>
             <description>1st IP on WAN</description>
           </alias>
           <alias uuid="cb5cb100-f4bc-4ce7-9cfb-cec43426cd78">
